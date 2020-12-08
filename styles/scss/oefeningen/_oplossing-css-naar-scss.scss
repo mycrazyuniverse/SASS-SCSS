@@ -1,0 +1,26 @@
+$padding: 10px;
+
+#navigatie {
+    background: #000;
+    position: relative;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: $padding;
+        background: #272727;
+        display: inline-block;
+
+        li {
+            float: left;
+            padding: $padding;
+            background: #5a5a5a;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    }
+}

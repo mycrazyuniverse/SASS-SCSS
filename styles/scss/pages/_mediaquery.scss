@@ -1,0 +1,24 @@
+@include min-width($screen-sm-min) {
+
+    #mdq {
+        background-color: red;
+    }
+
+}
+
+
+@include max-width($screen-md-min) {
+
+    #mdq {
+        background-color: green;
+    }
+
+}
+
+@include minandmax-width(1000px, 2000px) {
+
+    #mdq {
+        background-color: blue;
+    }
+
+}

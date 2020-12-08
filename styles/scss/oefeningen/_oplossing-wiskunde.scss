@@ -1,0 +1,27 @@
+.plus {
+    width: 1px + 19px;
+}
+
+.min {
+    width: 1px - 1px;
+}
+
+.multiply {
+    width: 10px * 2;
+}
+
+.divider {
+    width: 100px / 20px;
+}
+
+.modulo {
+    width: 100px % 1000;
+}
+
+#math {
+    div {
+        background: red;
+        margin: 10px 0px;
+        display: block;
+    }
+}

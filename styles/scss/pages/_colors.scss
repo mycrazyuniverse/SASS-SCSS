@@ -1,0 +1,168 @@
+/*.color{
+    font-family: Arial, Helvetica, sans-serif;
+    width: $size-color;
+    height: $size-color;
+    line-height: $size-color;
+    border-radius: $size-color;
+    margin: $size-color / 10;
+    float: left;
+    color: #fff;
+    text-align: center;
+}*/
+
+$size: 200px; 
+//inheratance 
+%color {
+    font-family: Arial,
+        Helvetica,
+        sans-serif;
+    width: $size;
+    height: $size-color;
+    line-height: $size-color;
+    border-radius: $size-color;
+    margin: $size-color / 10;
+    float: left;
+    color: #fff;
+    background-color: $base-color;
+    text-align: center;
+}
+
+//mixin
+@mixin cirlecolor($bg-color, $hover-color: false) {
+    @extend %color;
+    background: $bg-color;
+
+    &:hover {
+        @if($hover-color==false) {
+            color: $bg-color;
+        }
+
+        @else {
+            color: $hover-color;
+        }
+    }
+}
+
+@function alt-invert($color, $amount: 100%) {
+    $inverse: change-color($color, $hue: hue($color) + 180);
+    @return mix($inverse, $color, $amount);
+}
+
+.alt-invert{
+    color: alt-invert($base-color, 50%);
+}
+
+.base-color {
+    @include cirlecolor($base-color);
+}
+
+.lighten {
+    //background: lighten($base-color, 10%);
+    @include cirlecolor(lighten($base-color, 10%));
+}
+
+.darken {
+    //background: darken($base-color, 10%);
+    @include cirlecolor(darken($base-color, 10%));
+
+}
+
+.saturate {
+    //background: saturate($base-color, 20%);
+    @include cirlecolor(saturate($base-color, 20%));
+}
+
+.desaturate {
+    //background: desaturate($base-color, 20%);
+    @include cirlecolor(desaturate($base-color, 20%));
+}
+
+.hue {
+    @include cirlecolor(adjust-hue($base-color, 20%));
+    //background: adjust-hue($base-color, 20%);
+}
+
+.alpha {
+    //background: rgba($base-color, .7);
+    @include cirlecolor(rgba($base-color, .7), rgba($base-color, 0));
+    // doet het zelfde als rgba maar transparantie word afgetroken van 1, dus onderstaand zal ook transparantie van 70 te gevolg hebben
+    //background: transparentize($base-color, .3);
+    //@include cirlecolor(transparentize($base-color, .7));
+}
+
+.invert {
+    //background: invert($base-color, 100%);
+    @include cirlecolor(invert($base-color, 100%));
+}
+
+.alt-invert {
+    //background: invert($base-color, 100%);
+    @include cirlecolor(alt-invert($base-color, 100%));
+}
+
+.mix {
+    //background: mix(yellow, blue, 50%);
+    @include cirlecolor(mix(yellow, blue, 50%));
+}
+
+.hsla {
+    @include cirlecolor(hsla(349deg, 73%, 29%, 1));
+}
+
+.grayscale {
+    //background: grayscale($base-color);
+    @include cirlecolor(grayscale($base-color));
+}
+
+.complement {
+    //background: complement($base-color);
+    @include cirlecolor(complement($base-color));
+}
+
+/*.base-color:hover {
+    color: $base-color;
+}
+
+.invert:hover {
+    color: $base-color;
+}
+
+.lighten:hover {
+    color: lighten($base-color, 10%);
+}
+
+.darken:hover {
+    color: darken($base-color, 10%);
+}
+
+.saturate:hover {
+    color: saturate($base-color, 20%);
+}
+
+.desaturate:hover {
+    color: desaturate($base-color, 20%);
+}
+
+.hue:hover {
+    color: adjust-hue($base-color, 20%);
+}
+
+.alpha:hover {
+    color: transparentize($base-color, 1);
+}
+
+.mix:hover {
+    color: mix(yellow, red, 50%);
+}
+
+.invert:hover {
+    color: invert($base-color, 100%);
+}
+
+.grayscale:hover {
+    color: grayscale($base-color);
+}
+
+.complement:hover {
+    color: complement($base-color);
+}*/

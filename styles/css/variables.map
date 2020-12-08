@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"../scss/variables.scss"
+	],
+	"sourcesContent": [
+		" // extra small screens\n $screen-xs-min: 360px;\n\n // Small tablets and large smartphones (landscape view)\n $screen-sm-min: 576px;\n\n // Small tablets (portrait view)\n $screen-md-min: 768px;\n\n // Tablets and small desktops\n $screen-lg-min: 992px;\n\n // Large tablets and desktops\n $screen-xl-min: 1200px;\n\n $size-color: 100px;\n $base-color: rgb(129, 20, 40);\n"
+	],
+	"names": [],
+	"mappings": ""
+}
